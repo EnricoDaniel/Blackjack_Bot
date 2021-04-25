@@ -1,0 +1,27 @@
+        checkQuant = 0
+        for eachVal in main.handCards:
+            if eachVal != "":
+                checkQuant = checkQuant + 1
+        checkList = checkQuant - 1
+        for eachBox in cardsList:
+            if checkList < cardsList.index(eachBox):
+                card = eachBox.get()
+                if not card == "":
+                    main.handCards.append(card)
+
+
+
+        contHelper = 1
+        listLabel = []
+        listBox = []
+        for listPos in range(0,6):
+            self.cardLabel = ttk.Label(
+                master=self.sideMenuTable, style="TLabel", text="Card" + " " + str(listPos+1))
+            self.cardLabel.grid(row=contHelper, column=0, sticky='nw', padx=5, pady=(10,0))
+
+            self.cardList = ttk.Entry(
+                master=self.sideMenuTable, style="TEntry")
+            self.cardList.grid(row=contHelper + 1, column=0, sticky='nw', padx=5, pady=(0,10))
+            listLabel.append(self.cardLabel)
+            listBox.append(self.cardList)
+            contHelper = contHelper + 2
